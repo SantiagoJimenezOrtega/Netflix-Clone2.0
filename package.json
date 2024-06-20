@@ -9,18 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@arrow-navigation/core": "^2.2.0",
+    "@arrow-navigation/react": "^2.2.0",
     "@heroicons/react": "^1.0.6",
+    "@noriginmedia/norigin-spatial-navigation": "^2.1.0",
     "next": "14.2.4",
     "npm-git-install": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.2.1"
+    "react-icons": "^5.2.1",
+    "react-native-web": "^0.19.12",
+    "react-tv-space-navigation": "^3.6.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.19",
+    "encoding": "^0.1.13",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8.4.38",

@@ -19,7 +19,8 @@
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "react-native-web": "^0.19.12",
-    "react-tv-space-navigation": "^3.6.1"
+    "react-tv-space-navigation": "^3.6.1",
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -5,6 +5,13 @@ import Banner from "../../components/Banner";
 import requests from "../../utils/requests";
 import { Movie } from "../../typings";
 import Row from "../../components/Row";
+import React, { useEffect } from "react";
+import {
+  initArrowNavigation,
+  getArrowNavigation,
+} from "@arrow-navigation/core";
+
+// Initialize the library
 
 interface Props {
   netflixOriginals: Movie[];
@@ -17,6 +24,8 @@ interface Props {
   documentaries: Movie[];
 }
 
+/** */
+
 const Home = ({
   netflixOriginals,
   actionMovies,
@@ -27,26 +36,87 @@ const Home = ({
   topRated,
   trendingNow,
 }: Props) => {
-  console.log(netflixOriginals);
+  useEffect(() => {
+    initArrowNavigation({
+      preventScroll: true,
+    });
+    const navigationApi = getArrowNavigation();
+  }, []);
+
   return (
     <div className="relative h-screen bg-gradient-to-b lg:h-[140vh] scrollbar-none">
       <Head>
         <title>Home - Netflix</title>
-        <link rel="icon" href="public\favicon.ico" />
+        <link rel="icon" href="public\netflix.ico" />
       </Head>
       <Header />
-
       <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
-        <section className="md:space-y-24">
-          <Row title="Trending Now" movies={trendingNow} />
-          <Row title="Top Rated" movies={topRated} />
-          <Row title="Action Thrillers" movies={actionMovies} />
+        <section className="md:space-y-24" ah-col>
+          {/* Register each row as a focusable group */}
+          <Row
+            title="Trending Now"
+            movies={trendingNow}
+            id="row-1"
+            ref={(element) => {
+              navigationApi.registerGroup("row-1");
+            }}
+          />
+
+          <Row
+            title="Top Rated"
+            movies={topRated}
+            id="row-2"
+            ref={(element) => {
+              navigationApi.registerGroup("row-2");
+            }}
+          />
+
+          <Row
+            title="Action Thrillers"
+            movies={actionMovies}
+            id="row-3"
+            ref={(element) => {
+              navigationApi.registerGroup("row-3");
+            }}
+          />
+
           {/* My List Component */}
-          <Row title="Comedies" movies={comedyMovies} />
-          <Row title="Scary Movies" movies={horrorMovies} />
-          <Row title="Romance Movies" movies={romanceMovies} />
-          <Row title="Documentaries" movies={documentaries} />
+          <Row
+            title="Comedies"
+            movies={comedyMovies}
+            id="row-4"
+            ref={(element) => {
+              navigationApi.registerGroup("row-4");
+            }}
+          />
+
+          <Row
+            title="Scary Movies"
+            movies={horrorMovies}
+            id="row-5"
+            ref={(element) => {
+              navigationApi.registerGroup("row-5");
+            }}
+          />
+
+          <Row
+            title="Romance Movies"
+            movies={romanceMovies}
+            id="row-6"
+            ref={(element) => {
+              navigationApi.registerGroup("row-6");
+            }}
+          />
+
+          <Row
+            title="Documentaries"
+            movies={documentaries}
+            id="row-7"
+            ref={(element) => {
+              navigationApi.registerGroup("row-7");
+            }}
+          />
         </section>
       </main>
     </div>

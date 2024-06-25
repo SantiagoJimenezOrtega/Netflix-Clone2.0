@@ -1,14 +1,15 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import { Movie } from "../typings";
 import Thumbnail from "./Thumbnail";
-import { useRef, useState } from "react";
+import { forwardRef, useRef, useState } from "react";
 
 interface Props {
   title: string;
   movies: Movie[];
+  id: string;
 }
 
-function Row({ title, movies }: Props) {
+const Row = forwardRef<HTMLDivElement, Props>(({ title, movies, id }, ref) => {
   const rowRef = useRef<HTMLDivElement>(null);
   const [isMoved, setIsMoved] = useState(false);
 
@@ -30,6 +31,7 @@ function Row({ title, movies }: Props) {
       }
     }
   };
+
   return (
     <div className="h-40 space-y-0.5 md:space-y-2 ">
       <h2 className="w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white md:text-2xl">
@@ -59,6 +61,6 @@ function Row({ title, movies }: Props) {
       </div>
     </div>
   );
-}
+});
 
 export default Row;

@@ -31,14 +31,15 @@ function Banner({ netflixOriginals }: Props) {
           />
         </div>
       )}
-
       <h1 className="text-2xl lg:text-7xl md:text-4xl font-bold">
         {movie?.title || movie?.name || movie?.original_name}
       </h1>
-      <p className="max-w-xs text-shadow-md text-xs md:max-w-lg md:text-lg lg:max-w-2xl ls:text-2xl">
-        ({movie?.overview})
-      </p>
 
+      <p className="max-w-xs text-shadow-md text-xs md:max-w-lg md:text-lg lg:max-w-2xl ls:text-2xl">
+        {movie?.overview && movie.overview.length > 200
+          ? `${movie.overview.substring(0, 200)}... See more`
+          : movie?.overview}
+      </p>
       <div className="flex space-x-3 ">
         <button className="bannerButton bg-white text-black">
           <FaPlay className="h-4 w-4 text-black md:h-7 md:w-7" />

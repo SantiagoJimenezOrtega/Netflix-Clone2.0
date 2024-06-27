@@ -1,3 +1,4 @@
+/* eslint react/display-name: "off" */
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import { Movie } from "../typings";
 import Thumbnail from "./Thumbnail";
@@ -61,5 +62,7 @@ const Row = forwardRef<HTMLDivElement, Props>(({ title, movies }, ref) => {
     </div>
   );
 });
+
+Row.displayName = "Row";
 
 export default Row;

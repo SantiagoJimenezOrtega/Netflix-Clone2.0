@@ -54,69 +54,20 @@ const Home = ({
         <Banner netflixOriginals={netflixOriginals} />
         <section className="md:space-y-24" ah-col>
           {/* Register each row as a focusable group */}
-          <Row
-            title="Trending Now"
-            movies={trendingNow}
-            id="row-1"
-            ref={(element) => {
-              navigationApi.registerGroup("row-1");
-            }}
-          />
+          <Row title="Trending Now" movies={trendingNow} />
 
-          <Row
-            title="Top Rated"
-            movies={topRated}
-            id="row-2"
-            ref={(element) => {
-              navigationApi.registerGroup("row-2");
-            }}
-          />
+          <Row title="Top Rated" movies={topRated} />
 
-          <Row
-            title="Action Thrillers"
-            movies={actionMovies}
-            id="row-3"
-            ref={(element) => {
-              navigationApi.registerGroup("row-3");
-            }}
-          />
+          <Row title="Action Thrillers" movies={actionMovies} />
 
           {/* My List Component */}
-          <Row
-            title="Comedies"
-            movies={comedyMovies}
-            id="row-4"
-            ref={(element) => {
-              navigationApi.registerGroup("row-4");
-            }}
-          />
+          <Row title="Comedies" movies={comedyMovies} />
 
-          <Row
-            title="Scary Movies"
-            movies={horrorMovies}
-            id="row-5"
-            ref={(element) => {
-              navigationApi.registerGroup("row-5");
-            }}
-          />
+          <Row title="Scary Movies" movies={horrorMovies} />
 
-          <Row
-            title="Romance Movies"
-            movies={romanceMovies}
-            id="row-6"
-            ref={(element) => {
-              navigationApi.registerGroup("row-6");
-            }}
-          />
+          <Row title="Romance Movies" movies={romanceMovies} />
 
-          <Row
-            title="Documentaries"
-            movies={documentaries}
-            id="row-7"
-            ref={(element) => {
-              navigationApi.registerGroup("row-7");
-            }}
-          />
+          <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
     </div>

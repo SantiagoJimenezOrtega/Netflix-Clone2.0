@@ -6,10 +6,9 @@ import { forwardRef, useRef, useState } from "react";
 interface Props {
   title: string;
   movies: Movie[];
-  id: string;
 }
 
-const Row = forwardRef<HTMLDivElement, Props>(({ title, movies, id }, ref) => {
+const Row = forwardRef<HTMLDivElement, Props>(({ title, movies }, ref) => {
   const rowRef = useRef<HTMLDivElement>(null);
   const [isMoved, setIsMoved] = useState(false);
 
